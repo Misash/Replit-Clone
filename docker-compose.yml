@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web-ui:
+    build: ./webUI
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./webUI:/usr/src/app
+    command: npm run dev
+  api:
+    build: ./api
+    volumes:
+      - ./api:/usr/src/app
+    depends_on:
+      - web-ui
+    ports:
+      - "4000:4000"
+    command: flask run --host=0.0.0.0 --port=4000
