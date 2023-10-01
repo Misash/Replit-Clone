@@ -33,6 +33,10 @@ def analyze_code(code):
     return result
 
 
+@app.route('/ping', methods=['GET'])
+def ping():
+    return jsonify({'status': "hi"})
+
 
 @app.route('/eval', methods=['POST'])
 def eval_python_code():
@@ -48,4 +52,4 @@ def eval_python_code():
         return jsonify({'error': str(e), 'output': None})
 
 if __name__ == '__main__':
-    app.run(port=4000, debug=True)
+    app.run(host="0.0.0.0",port=4000, debug=True)
