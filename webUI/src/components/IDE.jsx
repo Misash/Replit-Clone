@@ -13,7 +13,7 @@ export default function PythonCodeAnalyzer() {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`${window.location.origin.replace(":5173", "")}:4000/eval`,
+            const response = await axios.post(`http://192.168.49.2:30706/eval`,
                 {
                     code: code,
                 });

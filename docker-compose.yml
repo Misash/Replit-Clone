@@ -1,14 +1,18 @@
-version: '3.8'
+version: '3'
 
 services:
   web-ui:
+    image: aaronapz/webui:1.0
     build: ./webUI
     ports:
       - "5173:5173"
     volumes:
       - ./webUI:/usr/src/app
     command: npm run dev
+    labels:
+      kompose.service.type: LoadBalancer
   api:
+    image: aaronapz/api:1.0
     build: ./api
     volumes:
       - ./api:/usr/src/app
@@ -17,3 +21,4 @@ services:
     ports:
       - "4000:4000"
     command: python app.py
+  

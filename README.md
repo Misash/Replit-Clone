@@ -1,6 +1,14 @@
 # Replit Clone - Cloud IDE
 
 
+# deploy api
+
+```
+
+
+```
+
+
 ## 1.  install docker compose 
 
 ```bash
