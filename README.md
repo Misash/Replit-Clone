@@ -1,15 +1,8 @@
 # Replit Clone - Cloud IDE
 
+## 1. Run Docker Compose
 
-# deploy api
-
-```
-
-
-```
-
-
-## 1.  install docker compose 
+ - install docker compose 
 
 ```bash
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -19,10 +12,32 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-## 2. Build and Run Docker-compose 
-
+- Build and Run Docker-compose 
 ```
 docker-compose build 
 docker-compose up
+```
 
+## 2. Deploy API
+
+```
+cd api/
+docker build -t aaronapz/ai .
+docker push aaronapz/api
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yml 
+kubectl get services  
+kubectl get nodes -o wide  
+```
+
+## 2. Deploy webUI
+
+```
+cd webui/
+docker build -t aaronapz/webui .
+docker push aaronapz/webui
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yml 
+kubectl get services  
+kubectl get nodes -o wide  
 ```
