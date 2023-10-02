@@ -1,29 +1,14 @@
 
 body {
-
-    font-family: Arial, sans-serif;
-}
-
-.container {
     display: flex;
-    margin: 2px;
-}
-
-.input-area {
-    flex: 1;
-    padding: 10px;
-    background-color: #f0f0f0;
-    /* Light gray background */
-}
-
-.cli-area {
-    flex: 1;
-    padding: 10px;
-    background-color: #e0e0e0;
-    /* Slightly darker gray background */
-}
-
-textarea {
-    width: 100%;
-    height: 300px;
-}
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Establece el alto al 100% del viewport */
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    background-color: #d1d9dc; /* Cambia el color de fondo según tus preferencias */
+  }
+  
+  .container {
+    /* Agrega estilos personalizados para el contenedor si es necesario */
+  }
+  
