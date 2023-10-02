@@ -9,6 +9,7 @@ import 'ace-builds/src-noconflict/ext-language_tools';
 import axios from 'axios';
 import '../style/IDE.css';
 import { useLocation } from 'react-router-dom';
+import {API_URL} from "../../config.js"
 
 export default function PythonCodeAnalyzer() {
     const [code, setCode] = useState('');
@@ -37,7 +38,7 @@ export default function PythonCodeAnalyzer() {
 
 
     const createSession = () => {
-        axios.get('http://localhost:4000/create_session')
+        axios.get(API_URL + '/create_session')
             .then((response) => {
                 const newSessionId = response.data.sessionId;
                 setSessionId(newSessionId);
@@ -49,7 +50,7 @@ export default function PythonCodeAnalyzer() {
     };
 
     const fetchCode = (sessionId) => {
-        axios.get(`http://localhost:4000/?sessionId=${sessionId}`)
+        axios.get(`${API_URL}/?sessionId=${sessionId}`)
             .then((response) => {
                 const code = response.data;
                 setCode(code);
@@ -77,7 +78,7 @@ export default function PythonCodeAnalyzer() {
 
     const saveCode = () => {
         // console.log("saving code...")
-        axios.post('http://localhost:4000/save', { sessionId, code })
+        axios.post(API_URL + '/save', { sessionId, code })
             .then(() => {
                 console.log('Código guardado con éxito');
             })
@@ -94,7 +95,7 @@ export default function PythonCodeAnalyzer() {
     const RunCode = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4000/eval', { code });
+            const response = await axios.post(API_URL + '/eval', { code });
             const data = response.data;
             setResult(data);
         } catch (error) {
