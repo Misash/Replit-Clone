@@ -1,14 +1,44 @@
-
 body {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 100vh; /* Establece el alto al 100% del viewport */
-    margin: 0; /* Elimina el margen predeterminado del cuerpo */
-    background-color: #d1d9dc; /* Cambia el color de fondo según tus preferencias */
-  }
-  
-  .container {
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    height: 100vh;
+    /* Establece el alto al 100% del viewport */
+    margin: 0;
+    /* Elimina el margen predeterminado del cuerpo */
+    background-color: #d1d9dc;
+    /* Cambia el color de fondo según tus preferencias */
+}
+
+.container {
     /* Agrega estilos personalizados para el contenedor si es necesario */
-  }
-  
+    padding: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+/* Agrega estos estilos al archivo de estilos CSS (IDE.css) o en línea dentro del componente */
+
+.console-area {
+    background-color: #000;
+    /* Fondo negro */
+    color: #00ff00;
+    /* Texto verde (puedes ajustar el color según tu preferencia) */
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    /* Usar una fuente de monoespaciado para simular una consola */
+    white-space: pre-wrap;
+    /* Mantiene el espaciado y las líneas en blanco */
+    height: 440px;
+    /* Ajusta la altura según tus necesidades */
+    overflow-y: scroll;
+    /* Agrega una barra de desplazamiento vertical si es necesario */
+}
+
+
+.black{
+    color: #000;
+}
