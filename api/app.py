@@ -10,6 +10,11 @@ CORS(app)
 
 sessions = {}  # Almacenar códigos por sesión
 
+
+@app.route('/ping', methods=['GET'])
+def ping():
+    return jsonify({'status': "cypherpunks"})
+
 @app.route('/', methods=['GET'])
 def get_code():
     session_id = request.args.get('sessionId')

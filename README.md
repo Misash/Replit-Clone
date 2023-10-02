@@ -22,7 +22,7 @@ docker-compose up
 
 ```
 cd api/
-docker build -t aaronapz/ai .
+docker build -t aaronapz/api .
 docker push aaronapz/api
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yml 
@@ -36,7 +36,7 @@ kubectl get nodes -o wide
 cd webui/
 docker build -t aaronapz/webui .
 docker push aaronapz/webui
-kubectl apply -f deployment.yaml
+kubectl apply -f deployment.yml
 kubectl apply -f service.yml 
 kubectl get services  
 kubectl get nodes -o wide  
