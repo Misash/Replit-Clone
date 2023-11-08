@@ -41,3 +41,5 @@ kubectl apply -f service.yml
 kubectl get services  
 kubectl get nodes -o wide  
 ```
+## Demo
+![image](https://github.com/Misash/Replit-Clone/assets/70419764/b0bd3bf3-d46a-4edd-b1b0-97526222bf34)
